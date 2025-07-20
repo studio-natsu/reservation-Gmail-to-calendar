@@ -20,16 +20,16 @@ TypeScript + Google API を使用。
 ---
 
 ## 構成
-reservation-management/
+reservation-Gmail-to-calendar/
 ├── credentials.json         ← OAuthクレデンシャル
 ├── token.json               ← 認証トークン（初回生成）
 ├── run_arms.bat             ←自動化機能のバッチファイル
 ├── node_modules/
 └── src/
     ├── main.ts              ← メインスクリプト
-    ├── googleOAuth.ts       ← OAuth認証処理
-    ├── confirmed_gmail.ts   ← GmailからAirbnb予約メールを抽出
-    └── calender.ts          ← Googleカレンダーへの入力
+    ├── createGoogleOAuthClient.ts       ← OAuth認証処理
+    ├── extractReservationFromGmail.ts   ← GmailからAirbnb予約メールを抽出
+    └── createCalendarEvent.ts           ← Googleカレンダーへの入力
 
 ---
 
@@ -80,10 +80,10 @@ reservation-management/
     npm install -D typescript ts-node @types/node
 
 ### 初回認証（トークン作成）
-    npx ts-node reservation-management/src/main.ts
+    npx ts-node reservation-Gmail-to-calendar/src/main.ts
 
 ### 実行
-    npx ts-node reservation-management/src/main.ts
+    npx ts-node reservation-Gmail-to-calendar/src/main.ts
 
 ### 自動化
 1. main.tsをビルドしてjsファイルをつくる
@@ -96,7 +96,7 @@ reservation-management/
 - カレンダーの自動化入力ができているかどうか確認必要（WSLのリモートが切れるから、今回はタスクスケジューラで実施）
 - 部屋ごとの色わけ
 - 予約のキャンセルや変更についての自動化必要性
-- confirmed_gmail.ts : const resのmaxrisult 最新の1件だと、同じ日にメールが何通か来たら入力されない可能性
+- extractReservationFromGmail.ts : const resのmaxrisult 最新の1件だと、同じ日にメールが何通か来たら入力されない可能性
 
 
 
