@@ -20,6 +20,7 @@ TypeScript + Google API を使用。
 ---
 
 ## 構成
+---
 reservation-Gmail-to-calendar/
 ├── credentials.json         ← OAuthクレデンシャル
 ├── token.json               ← 認証トークン（初回生成）
@@ -30,7 +31,6 @@ reservation-Gmail-to-calendar/
     ├── createGoogleOAuthClient.ts       ← OAuth認証処理
     ├── extractReservationFromGmail.ts   ← GmailからAirbnb予約メールを抽出
     └── createCalendarEvent.ts           ← Googleカレンダーへの入力
-
 ---
 
 ## 処理の流れ
