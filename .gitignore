@@ -1,0 +1,6 @@
+# node_modules フォルダ（既に書いてある）
+node_modules
+
+# JSON ファイル（全体）
+*.json
+

@@ -1,0 +1,5 @@
+[tools]
+node = v22.16.0
+
+[env]
+GOOGLE_CREDENTIALS = "./credentials.json"
